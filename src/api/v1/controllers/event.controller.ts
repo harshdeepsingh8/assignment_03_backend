@@ -25,7 +25,7 @@ export const getEventByIdController = async (
   req: Request,
   res: Response
 ) => {
-  const event = await service.getEventByIdService(req.params.id);
+  const event = await service.getEventByIdService(req.params.id as string);
 
   if (!event) {
     return res.status(404).json({ message: "Event not found" });
@@ -39,7 +39,7 @@ export const updateEventController = async (
   res: Response
 ) => {
   const updated = await service.updateEventService(
-    req.params.id,
+    req.params.id as string,
     req.body
   );
 
@@ -54,7 +54,7 @@ export const deleteEventController = async (
   req: Request,
   res: Response
 ) => {
-  const deleted = await service.deleteEventService(req.params.id);
+  const deleted = await service.deleteEventService(req.params.id as string);
 
   if (!deleted) {
     return res.status(404).json({ message: "Event not found" });
