@@ -11,7 +11,7 @@ import {
   deleteEventController,
 } from "../controllers/event.controller";
 
-const router = express.Router(); // ✅ MUST BE BEFORE USING
+const router = express.Router(); 
 
 router.post("/events", validate(createEventSchema), createEventController);
 
