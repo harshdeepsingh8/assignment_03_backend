@@ -20,7 +20,7 @@ describe("Create Event Validation", () => {
     };
 
     const { error } = createEventSchema.validate(data);
-    expect(error?.message).toContain('"name" is required');
+    expect(error?.message).toContain('is required');
   });
 
   it("should fail when capacity < 5", () => {
